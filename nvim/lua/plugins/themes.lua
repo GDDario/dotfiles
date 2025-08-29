@@ -8,12 +8,15 @@ return {
         "datsfilipe/vesper.nvim", 
         name = "vesper", 
         priority = 1000,
-        config = function()
+        opts = {
             italics = {
                 strings = false,
-            	comments = true,
-            }
-	    vim.cmd.colorscheme "vesper"
-        end
+                comments = true,
+            },
+        },
+        config = function(_, opts)
+            require("vesper").setup(opts)
+            vim.cmd.colorscheme "vesper"
+        end,
     }
 }
