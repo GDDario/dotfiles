@@ -11,7 +11,7 @@ return {
         version = "^1.0.0",
         config = function()
             require("barbar").setup({
-                animation = true,
+                animation = false,
             })
 
             local map = vim.keymap.set
