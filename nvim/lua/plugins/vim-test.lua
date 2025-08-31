@@ -11,10 +11,10 @@ return {
         }
         vim.g["test#strategy"] = "floaterm"
 
-        vim.keymap.set("n", "<leader>t", ":TestNearest<CR>", {})
-        vim.keymap.set("n", "<leader>T", ":TestFile<CR>", {})
-        vim.keymap.set("n", "<leader>a", ":TestSuite<CR>", {})
-        vim.keymap.set("n", "<leader>l", ":TestLast<CR>", {})
+        vim.keymap.set("n", "<C-t>", ":TestNearest<CR>", {})
+        vim.keymap.set("n", "<C-T>", ":TestFile<CR>", {})
+        vim.keymap.set("n", "<C-a>", ":TestSuite<CR>", {})
+        vim.keymap.set("n", "<C-l>", ":TestLast<CR>", {})
     end,
 }
 
