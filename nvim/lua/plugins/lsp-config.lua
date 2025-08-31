@@ -6,7 +6,7 @@ return {
 	{
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
-			ensure_installed = { "lua_ls", "ts_ls", "intelephense", "laravel_ls" },
+			ensure_installed = { "lua_ls", "ts_ls", "intelephense", "laravel_ls", "angularls" },
 		},
 		dependencies = {
 			{ "mason-org/mason.nvim", opts = {} },
@@ -41,6 +41,9 @@ return {
             -- })
             lspconfig.intelephense.setup({
                 capabilities = capabilities,
+            })
+            lspconfig.angularls.setup({
+                capabilities = capabilities
             })
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
