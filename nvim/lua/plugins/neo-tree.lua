@@ -16,6 +16,10 @@ return {
 						visible = true,
 						hide_dotfiles = false,
 					},
+					follow_current_file = {
+						enabled = true,
+						leave_dirs_open = true,
+					},
 				},
 			})
 
