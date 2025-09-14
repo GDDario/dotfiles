@@ -10,6 +10,12 @@ vim.keymap.set("n",    "<S-Tab>",       "<<",  opts)
 vim.keymap.set("v",    "<Tab>",         ">gv", opts)
 vim.keymap.set("v",    "<S-Tab>",       "<gv", opts)
 
+vim.keymap.set("x", "p", "\"_dP") -- Continue pasting what was previous selected
+
+-- Keeps the cursor in the center of the screen when going up and down a page 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 --vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 --vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 --vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
