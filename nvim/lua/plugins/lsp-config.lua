@@ -32,6 +32,7 @@ return {
             end, { desc = "Hover documentation" })
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+            vim.keymap.set("n", "rn", vim.lsp.buf.rename, {})
 
             local function get_root_dir(filetype, patterns)
                 return function(fname)
