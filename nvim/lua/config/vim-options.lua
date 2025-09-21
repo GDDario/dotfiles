@@ -24,10 +24,15 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.api.nvim_create_autocmd("VimEnter", {
+vim.api.nvim_create_autocmd("User", {
+	pattern = "AlphaReady",
 	callback = function()
-		if vim.fn.argc() == 0 then
-			vim.cmd("Neotree filesystem reveal left")
-		end
+		-- Abre o Neo-tree primeiro
+		vim.cmd("Neotree filesystem reveal left")
+
+		-- Recalcula o Alpha após abrir o Neo-tree
+		vim.schedule(function()
+			require("alpha").redraw()
+		end)
 	end,
 })
