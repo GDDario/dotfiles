@@ -1,0 +1,126 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace && Editor",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+      // "ctrl-f": "file_finder::Toggle",
+    },
+  },
+  {
+    // Android Studio-compatible Flutter shortcuts.
+    // Run tasks ask for the device; they are defined in the project's
+    // .zed/tasks.json (Fintray). Ctrl+Alt+F* is avoided because GNOME uses it
+    // to switch virtual terminals.
+    "context": "Workspace",
+    "bindings": {
+      "shift-f10": ["task::Spawn", { "task_name": "Fintray: Run (choose device)" }],
+      "shift-f9": ["task::Spawn", { "task_name": "Fintray: Run Debug (choose device)" }],
+      "alt-f10": ["task::Spawn", { "task_name": "Fintray: Hot Restart" }],
+      "ctrl-shift-f10": ["task::Spawn", { "task_name": "Flutter: Devices" }],
+      "ctrl-shift-f11": ["task::Spawn", { "task_name": "Flutter: Analyze" }],
+    },
+  },
+  {
+    // Override Zed's built-in Shift+F10 context-menu binding in editors.
+    "context": "Editor",
+    "bindings": {
+      "shift-f10": ["task::Spawn", { "task_name": "Fintray: Run (choose device)" }],
+      "shift-f9": ["task::Spawn", { "task_name": "Fintray: Run Debug (choose device)" }],
+      "alt-f10": ["task::Spawn", { "task_name": "Fintray: Hot Restart" }],
+    },
+  },
+  {
+    // The JetBrains base keymap binds Ctrl+K alone to "focus commit message",
+    // which fires immediately and breaks every Ctrl+K chord (Ctrl+K Ctrl+O,
+    // Ctrl+K Ctrl+S, Ctrl+K Ctrl+T, ...). Remove it; Alt+2 opens the Git panel.
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-k": "git_panel::FocusEditor",
+    },
+  },
+  {
+    // In Vim insert mode Ctrl+K starts a digraph, which swallows every Ctrl+K
+    // chord while typing (including in the agent chat box). Remove it.
+    "context": "vim_mode == insert",
+    "unbind": {
+      "ctrl-k": ["vim::PushDigraph", {}],
+    },
+  },
+  {
+    // VS Code-style "Open Folder".
+    "context": "Workspace || Editor",
+    "bindings": {
+      "ctrl-k ctrl-o": "workspace::Open",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+      "ctrl+;": "vim::ToggleComments",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-f": "buffer_search::Deploy",
+      "ctrl-e": "file_finder::Toggle",
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-h": "pane::ActivatePreviousItem",
+      "ctrl-l": "pane::ActivateNextItem",
+      // "alt-2": "git_panel::FocusEditor",
+      "ctrl-g": "go_to_line::Toggle",
+      "ctrl-s": "workspace::Save",
+      "ctrl+;": "vim::ToggleComments"
+      // "ctrl-w": "workspace::CloseWindow",
+    }
+  },
+  {
+    "context": "((vim_mode == normal || vim_mode == helix_normal) && !menu)",
+    "bindings": {
+      "ctrl-h": "pane::ActivatePreviousItem",
+      "ctrl-l": "pane::ActivateNextItem",
+      "alt-2": "git_panel::FocusEditor",
+    }
+  },
+  {
+    "bindings": {
+      "alt-2": "git_panel::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-k ctrl-/": "editor::ToggleBlockComments"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-;": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": true
+        }
+      ]
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-/": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": true
+        }
+      ]
+    }
+  }
+]

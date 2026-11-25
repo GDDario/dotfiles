@@ -1,0 +1,124 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "cli_default_open_behavior": "existing_window",
+  "auto_install_extensions": {
+    // Languages and tools
+    "angular": true,
+    "dart": true,
+    "html": true,
+    "make": true,
+    "php": true,
+    "sql": true,
+    "toml": true,
+    "wakatime": true,
+    "xml": true,
+    // Themes ("nvim-nightfox" provides Carbonfox)
+    "nvim-nightfox": true,
+    "quasi-monochrome": true,
+    "solarized": true,
+    "tokyo-night": true,
+  },
+  "project_panel": {
+    "button": false,
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left",
+    "tree_view": true
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
+    "cursor": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "dock": "right",
+    "tool_permissions": {
+      "tools": {
+        "delete_path": {
+          "default": "confirm"
+        }
+      }
+    },
+    "default_profile": "write",
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-5.3-codex",
+      "enable_thinking": true,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "vim": {
+    "toggle_relative_line_numbers": true,
+  },
+  "ui_font_family": "JetBrains Mono",
+  "buffer_font_family": "JetBrains Mono",
+  "autosave": "off",
+  "format_on_save": "off",
+  "terminal": {
+    "working_directory": "first_project_directory",
+  },
+  "vim_mode": true,
+  "base_keymap": "JetBrains",
+  "ui_font_size": 15.0,
+  "buffer_font_size": 13.5,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Solarized Dark",
+  },
+  // "languages": {
+  //   "PHP": {
+  //     "language_servers": ["intelephense"],
+  //     "formatter": {
+  //       "external": {
+  //         "command": "bash",
+  //         "arguments": [
+  //           "-c",
+  //           "cat > {buffer_path} && ./api/vendor/bin/pint --config ./api/pint.json --quiet {buffer_path} && cat {buffer_path}",
+  //         ],
+  //       },
+  //     },
+  //   },
+  // },
+  "languages": {
+    "PHP": {
+      "language_servers": ["intelephense"],
+    },
+  },
+  "lsp": {
+    "intelephense": {
+      "initialization_options": {
+        "licenceKey": "/home/gddario/intelephense/license.txt",
+      },
+    },
+  },
+}
